@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//li 태그의 자식중에 span태그를 선택
+		$("#btnChildren").click(function(){
+			$("li > span").css("color","orange");
+		})
+		
+		//li 태그의 후손중에 span태그를 선택
+		$("#btnDecendants").click(function(){
+			$("li span").css("color","orange");
+		})
+	
+		
+		$("#btnReset").click(function(){
+			$("li span").css("color","black");
+		})
+	
+	})
+</script>
+</head>
+<body>
+<!-- li입장에선 : span, div의 아들, 안에 있는 후손은 span-->
+<!-- 후손의 span일 경우엔 2개가 해당 -->
+<!-- 아들일 경우는 1개 -->
+
+	<ul>
+		<li>홍길동<br>
+			<span>20</span><br>
+			<div>
+				 <span>서울시 마포구 서교동</span>
+			</div> 
+		</li>	 
+	</ul>
+	<span>010-1234-5678</span>
+	<hr>
+	 
+	<button id="btnChildren">li의 아들 중에 span선택하기</button>
+	<button id="btnDecendants">li의 후손 중에 span선택하기</button>
+	<button id="btnReset">초기화</button>
+</body>
+</html>
